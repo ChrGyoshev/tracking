@@ -9,5 +9,15 @@
 .spinner {
   min-height: 85vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  color: white;
+}
+
+.spinner-container {
+  background-color: #343a40;
+  padding: 3rem 3rem;
+  border-radius: 9%;
+  box-shadow:-1px 4px 20px 5px rgb(0 0 0 / 62%);
 }

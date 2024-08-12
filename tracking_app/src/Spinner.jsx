@@ -4,7 +4,10 @@ export default () => {
   return (
     <>
       <div className="spinner">
-        <Spinner animation="border" />
+        <div className="spinner-container">
+          <Spinner animation="border" />
+        </div>
+        <h4 className="text-dark pt-2">Loading...</h4>
       </div>
     </>
   );
