@@ -1,5 +1,13 @@
 #root {
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
+  
+}
+
+.spinner {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
