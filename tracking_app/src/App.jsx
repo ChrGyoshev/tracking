@@ -31,15 +31,9 @@ function App() {
 
   return (
     <>
-      {loading ? <Spinner /> : <IntroCard data={data} />}
+      {loading ? <Spinner /> : <IntroCard data={data} tracking_number={tracking_number} />}
 
-      {/* <div>
-        {data.map((item, index) => (
-          <h1 key={index}>
-            {index === 0 ? <div>{item.info}</div> : <div>{item.dt}</div>}
-          </h1> // Display each item's info
-        ))}
-      </div> */}
+     
     </>
   );
 }

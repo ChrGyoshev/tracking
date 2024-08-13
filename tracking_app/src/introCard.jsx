@@ -1,7 +1,6 @@
 import Card from "react-bootstrap/Card";
 
-function IntroCard({ data }) {
-  console.log(data);
+function IntroCard({ data, tracking_number }) {
   return (
     <>
       {data.map((item, index) => (
@@ -9,7 +8,7 @@ function IntroCard({ data }) {
           key={index}
           border="white"
           style={{ width: "18rem" }}
-          className="border-2 shadow-lg p-3 mb-5 bg-body rounded-4 d-flex align-items-center"
+          className="border-2 shadow-lg p-3 mb-1 mt-5 bg-body rounded-4 d-flex align-items-center"
         >
           {index === 0 && (
             <Card.Img
@@ -25,23 +24,26 @@ function IntroCard({ data }) {
           <Card.Body>
             <Card.Title>
               {index === 0 && (
-                <h5 className="fs-5 text-md-start">LP4T2934S762FG34876</h5>
+                <h5 className="fs-5 text-md-start">{tracking_number}</h5>
               )}
             </Card.Title>
-            <Card.Text
-              style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
-            >
-              <i
-                className="fa-solid fa-location-arrow"
-                style={{
-                  fontSize: "1.5rem",
-                  marginRight: "1rem",
-                }}
+
+            {item.city_office && (
+              <Card.Text
+                style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
               >
-                {" "}
-              </i>
-              Sofia
-            </Card.Text>
+                <i
+                  className="fa-solid fa-location-arrow"
+                  style={{
+                    fontSize: "1.5rem",
+                    marginRight: "1rem",
+                  }}
+                >
+                  {" "}
+                </i>
+                {item.city_office}
+              </Card.Text>
+            )}
 
             <Card.Text
               style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
@@ -53,7 +55,7 @@ function IntroCard({ data }) {
                   marginRight: "1rem",
                 }}
               ></i>
-              10.08.2024
+              {item.dt}
             </Card.Text>
 
             <Card.Text>
