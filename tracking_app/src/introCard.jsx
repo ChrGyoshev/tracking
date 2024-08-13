@@ -1,64 +1,73 @@
 import Card from "react-bootstrap/Card";
 
-function IntroCard() {
+function IntroCard({ data }) {
+  console.log(data);
   return (
-    <Card
-      border="white"
-      style={{ width: "18rem" }}
-      className="border-2 shadow-lg p-3 mb-5 bg-body rounded-4 d-flex align-items-center"
-    >
-      <Card.Img
-        variant="top"
-        src="https://cdn-icons-png.freepik.com/512/5952/5952766.png"
-        style={{
-          width: "40%",
-          height: "35%",
-        }}
-      />
-      <Card.Body>
-        <Card.Title>
-          <h5 className="fs-5 text-md-start">LP4T2934S762FG34876</h5>
-        </Card.Title>
-        <Card.Text
-          style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
-        >
-          <i
-            className="fa-solid fa-location-arrow"
-            style={{
-              fontSize: "1.5rem",
-              marginRight: "1rem",
-            }}
-          >
-            {" "}
-          </i>
-          Sofia
-        </Card.Text>
+    <div>
+      {data.map((item, index) => (
+        <h1 key={index}>
+          {index === 0 ? <div>{item.info}</div> : <div>{item.dt}</div>}
+        </h1> // Display each item's info
+      ))}
+    </div>
 
-        <Card.Text
-          style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
-        >
-          <i
-            className="fa-solid fa-calendar"
-            style={{
-              fontSize: "1.5rem",
-              marginRight: "1rem",
-            }}
-          ></i>
-          10.08.2024
-        </Card.Text>
+    // <Card
+    //   border="white"
+    //   style={{ width: "18rem" }}
+    //   className="border-2 shadow-lg p-3 mb-5 bg-body rounded-4 d-flex align-items-center"
+    // >
+    //   <Card.Img
+    //     variant="top"
+    //     src="https://cdn-icons-png.freepik.com/512/5952/5952766.png"
+    //     style={{
+    //       width: "40%",
+    //       height: "35%",
+    //     }}
+    //   />
+    //   <Card.Body>
+    //     <Card.Title>
+    //       <h5 className="fs-5 text-md-start">LP4T2934S762FG34876</h5>
+    //     </Card.Title>
+    //     <Card.Text
+    //       style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
+    //     >
+    //       <i
+    //         className="fa-solid fa-location-arrow"
+    //         style={{
+    //           fontSize: "1.5rem",
+    //           marginRight: "1rem",
+    //         }}
+    //       >
+    //         {" "}
+    //       </i>
+    //       Sofia
+    //     </Card.Text>
 
-        <Card.Text>
-          <i
-            className="fa-solid fa-circle-info"
-            style={{
-              fontSize: "1.5rem",
-              marginRight: "1rem",
-            }}
-          ></i>
-          Пратка в очакване
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    //     <Card.Text
+    //       style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
+    //     >
+    //       <i
+    //         className="fa-solid fa-calendar"
+    //         style={{
+    //           fontSize: "1.5rem",
+    //           marginRight: "1rem",
+    //         }}
+    //       ></i>
+    //       10.08.2024
+    //     </Card.Text>
+
+    //     <Card.Text>
+    //       <i
+    //         className="fa-solid fa-circle-info"
+    //         style={{
+    //           fontSize: "1.5rem",
+    //           marginRight: "1rem",
+    //         }}
+    //       ></i>
+    //       Пратка в очакване
+    //     </Card.Text>
+    //   </Card.Body>
+    // </Card>
   );
 }
 

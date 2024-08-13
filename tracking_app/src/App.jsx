@@ -31,15 +31,15 @@ function App() {
 
   return (
     <>
-      {loading ? <Spinner /> : <IntroCard />}
+      {loading ? <Spinner /> : <IntroCard data={data} />}
 
-      <div>
+      {/* <div>
         {data.map((item, index) => (
           <h1 key={index}>
             {index === 0 ? <div>{item.info}</div> : <div>{item.dt}</div>}
           </h1> // Display each item's info
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
