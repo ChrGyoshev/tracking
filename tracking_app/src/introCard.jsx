@@ -21,15 +21,12 @@ function IntroCard({ data, tracking_number }) {
             />
           )}
 
-          <Card.Body>
-            <Card.Title>
-              {index === 0 && (
-                <h5 className="fs-5 text-md-start">{tracking_number}</h5>
-              )}
-            </Card.Title>
+          <Card.Body style={{ paddingLeft: "3em", paddingRight: "3em" }}>
+            <Card.Title>{index === 0 && <p>{tracking_number}</p>}</Card.Title>
 
             {item.city_office && (
               <Card.Text
+                className="text-nowrap"
                 style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
               >
                 <i
@@ -58,7 +55,7 @@ function IntroCard({ data, tracking_number }) {
               {item.dt}
             </Card.Text>
 
-            <Card.Text>
+            <Card.Text className="text-nowrap">
               <i
                 className="fa-solid fa-circle-info"
                 style={{
@@ -66,7 +63,7 @@ function IntroCard({ data, tracking_number }) {
                   marginRight: "1rem",
                 }}
               ></i>
-              Пратка в очакване
+              {item.info}
             </Card.Text>
           </Card.Body>
         </Card>
