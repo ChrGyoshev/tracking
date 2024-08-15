@@ -1,12 +1,13 @@
-import IntroCard from "./introCard";
+import TrackingCard from "./TrackingCard";
 import "./App.css";
 import { useState, useEffect } from "react";
 import Spinner from "./Spinner";
 
 function App() {
-  const tracking_number = "158271900314162555901532";
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const tracking_number = "158271900314162555901532"; // Enter your own tracking number here
+
+  const [loading, setLoading] = useState(true); // if loading is true spinner is active
+  const [data, setData] = useState([]); // state to keep data from fetched tracking number
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,8 +21,9 @@ function App() {
 
         const result = await response.json();
         setData(result);
-        setLoading(false);
+        setLoading(!loading);
       } catch (error) {
+        setLoading(!loading);
         setData(error);
       }
     };
@@ -31,9 +33,11 @@ function App() {
 
   return (
     <>
-      {loading ? <Spinner /> : <IntroCard data={data} tracking_number={tracking_number} />}
-
-     
+      {loading ? (
+        <Spinner />
+      ) : (
+        <TrackingCard data={data} tracking_number={tracking_number} />
+      )}
     </>
   );
 }

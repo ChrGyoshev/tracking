@@ -1,7 +1,8 @@
 import Card from "react-bootstrap/Card";
 
-function IntroCard({ data, tracking_number }) {
+function TrackingCard({ data, tracking_number }) {
   return (
+    // map all tracking details to display them as a card
     <>
       {data.map((item, index) => (
         <Card
@@ -10,7 +11,7 @@ function IntroCard({ data, tracking_number }) {
           style={{ width: "18rem" }}
           className="border-2 shadow-lg p-3 mb-1 mt-5 bg-body rounded-4 d-flex align-items-center"
         >
-          {index === 0 && (
+          {index === 0 && ( // shows shipping truck icon only for the first tracking status
             <Card.Img
               variant="top"
               src="https://cdn-icons-png.freepik.com/512/5952/5952766.png"
@@ -22,9 +23,12 @@ function IntroCard({ data, tracking_number }) {
           )}
 
           <Card.Body style={{ paddingLeft: "3em", paddingRight: "3em" }}>
-            <Card.Title>{index === 0 && <p>{tracking_number}</p>}</Card.Title>
-
-            {item.city_office && (
+            {
+              <Card.Title>
+                {index === 0 && <p>{tracking_number}</p>}
+              </Card.Title> /* shows tracking number only on the first card*/
+            }
+            {item.city_office && ( // shows city name if available
               <Card.Text
                 className="text-nowrap"
                 style={{ borderBottom: "1px solid", paddingBottom: "0.5rem" }}
@@ -54,7 +58,6 @@ function IntroCard({ data, tracking_number }) {
               ></i>
               {item.dt}
             </Card.Text>
-
             <Card.Text className="text-nowrap">
               <i
                 className="fa-solid fa-circle-info"
@@ -72,4 +75,4 @@ function IntroCard({ data, tracking_number }) {
   );
 }
 
-export default IntroCard;
+export default TrackingCard;
