@@ -22,7 +22,7 @@ function TrackingCard({ data, tracking_number }) {
             />
           )}
 
-          <Card.Body style={{ paddingLeft: "3em", paddingRight: "3em" }}>
+          <Card.Body style={{ paddingLeft: "3.5em", paddingRight: "3em" }}>
             {
               <Card.Title>
                 {index === 0 && <p>{tracking_number}</p>}

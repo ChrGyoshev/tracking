@@ -45,3 +45,4 @@ dist
 **/.firebase
 **/.firebaserc
 firebase.json
+firebase.js
